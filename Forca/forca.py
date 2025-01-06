@@ -1,16 +1,15 @@
 import random
-#definindo variáveis imutáveis
-palavras = ["cachorro", "paralelepipedo", "conjuntos", "diarreia", "dia", "numeros", "momento", "dinheiro"]
+import variaveis
+
 resposta = 1
 
 while(resposta == 1):
 	#definindo variáveis mutáveis de rodada para rodada
 	
 	nome_jogador = input("\nOlá! Bem-vindo ao 'A Forca'. Digite seu nome:\n")
-	escolhida = random.choice(palavras)
-	separada = list(escolhida)
-	tamanho = len(escolhida)
-	cifrada = escolhida.replace(escolhida, '_' * tamanho)
+	separada = list(variaveis.escolhida)
+	tamanho = len(variaveis.escolhida)
+	cifrada = variaveis.escolhida.replace(variaveis.escolhida, '_' * tamanho)
 	armazenada = list(cifrada)
 	erros = []
 	chances = 20
@@ -29,7 +28,7 @@ while(resposta == 1):
 				armazenada.insert(k, tentativa)
 			k = k+1
 
-		chute = escolhida.find(tentativa)
+		chute = variaveis.escolhida.find(tentativa)
 		if(chute < 0):
 			print("A palavra não contém a letra " + str(tentativa) + ".\n")
 			erros.insert(i, tentativa)
